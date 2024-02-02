@@ -4,6 +4,7 @@ export type Contact = {
   email: string;
   cellphone: string;
   coordinates: Coordinates;
+  distance?: string
 };
 
 export type Coordinates = {

@@ -35,3 +35,23 @@ export const Div = styled.div<ContainerStyle>`
       position: ${(props) => props.$position || 'relative'};
     `}
 `;
+
+export const Container = styled.div<ContainerStyle>`
+  padding: ${(props) => props.$padding};
+  max-width: ${(props) => props.$maxWidth || "80vw"};
+  width: ${(props) => props.$width || '70vw'};
+  gap: ${(props) => props.$gap || '4vh'};
+  height: ${(props) => props.$height || "auto"};
+  margin: ${(props) => props.$margin || "30px 0"};
+  margin-left: ${(props) => props.$marginLeft || "12"}%;
+  box-shadow: ${(props) => props.$boxShadow};
+  margin-right: ${(props) => props.$marginRight};
+  min-width: ${(props) => props.$minWidth};
+  transition: .5s;
+
+  @media (max-width: 1100px) {
+    min-width: 650px;
+    margin-left: ${(props) => props.$marginLeft || "5"}%;
+    transition: .5s;
+  }
+`;

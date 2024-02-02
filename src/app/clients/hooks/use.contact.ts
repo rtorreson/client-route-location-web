@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Contact } from '../types';
 import { useContactStore } from '../context/client.context';
-import { addContact, listContact } from '../service';
+import { addContact, listContact, listRoutes } from '../service';
 
 export const useAddContactQuery = () => {
-  const queryClient = useQueryClient();
   const contactStore = useContactStore();
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const addContactMutation = useMutation(
@@ -18,7 +18,6 @@ export const useAddContactQuery = () => {
     },
     {
       onSuccess: async () => {
-        queryClient.invalidateQueries('contact');
         toast.success('Novo contato adicionado.', {
           position: 'top-right',
           autoClose: 5000,
@@ -29,6 +28,9 @@ export const useAddContactQuery = () => {
           progress: undefined,
           theme: 'light',
         });
+
+        queryClient.fetchQuery('listContacts');
+
         navigate('/');
       },
       onError: (error: any) => {
@@ -51,7 +53,23 @@ export const useListContactQuery = () => {
       contactStore.addContact(value);
       return value;
     },
-    onError: (error: any) => {
+    onError: (error: unknown) => {
+      console.error(error);
+    },
+  });
+
+  return {
+    contacts,
+    isLoading,
+  };
+};
+
+export const useListContactRoutesQuery = () => {
+  const { data: contacts, isLoading } = useQuery('listRoutes', listRoutes, {
+    onSuccess: (value) => {
+      return value;
+    },
+    onError: (error: unknown) => {
       console.error(error);
     },
   });

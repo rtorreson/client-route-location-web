@@ -1,8 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { Fragment, useMemo, useState } from 'react';
 
-import contactStore from '../store/client.store'
-
 import { ComposableTable } from '@/shared';
 
 import { Contact } from '../types';
@@ -10,15 +8,15 @@ import { Contact } from '../types';
 export const ListContact = observer(({ values }: { values: Contact[] | [] }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPage = Math.ceil(values.length / 5);
-  const startIndex = (currentPage - 1) * 5;
-  const endIndex = startIndex + 5;
+  const totalPage = Math.ceil(values.length / 6);
+  const startIndex = (currentPage - 1) * 6;
+  const endIndex = startIndex + 6;
 
-  const visibleData = useMemo(() => {
+  const contacts = useMemo(() => {
     return values?.slice(startIndex, endIndex);
-  }, [values, startIndex, endIndex]);
+  }, [startIndex, endIndex]);
 
-  const goToPage = (pageNumber: number) => {
+  const nextPage = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPage) {
       setCurrentPage(pageNumber);
     }
@@ -27,8 +25,8 @@ export const ListContact = observer(({ values }: { values: Contact[] | [] }) => 
     <Fragment>
       <ComposableTable
         currentPage={currentPage}
-        nextPage={goToPage}
-        visibleData={visibleData}
+        nextPage={nextPage}
+        contacts={contacts}
       />
     </Fragment>
   );

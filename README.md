@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Descrição do Projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Neste projeto, adotei uma abordagem de desenvolvimento baseada em uma estrutura ampla e reutilizável, buscando isolar módulos e criar visualizações finais mais flexíveis. Destaco o uso do padrão composable, permitindo a injeção de componentes e aumentando a robustez do sistema.
 
-Currently, two official plugins are available:
+## Principais Tecnologias e Bibliotecas Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Utilizei o React como biblioteca principal para construir a interface do usuário, aproveitando seus conceitos de componentização juntamente ao Typescript.
 
-## Expanding the ESLint configuration
+- **React Hook Form**: Integrei o React Hook Form para gerenciar e validar formulários de maneira eficiente, proporcionando uma experiência de desenvolvimento mais fluida.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React Query**: Integrei o React Query para gerenciamento de estado e consultas à API, simplificando a lógica de busca e atualização de dados.
 
-- Configure the top-level `parserOptions` property like this:
+- **MobX**: Adotei o MobX para criar uma estrutura sólida com eventos em tempo real. Isso proporciona uma gestão de estado eficiente e reativa, melhorando a interatividade da aplicação.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Estrutura do Projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+A estrutura do projeto foi pensada para ser avançada e reutilizável. A modularização dos componentes e a adoção do padrão composable facilitam a manutenção e escalabilidade do sistema.
+
+## Layout e Design
+
+O layout foi construido com styled-components, mas mantido simples, mas a estrutura subjacente é mais avançada, destacando a robustez e a capacidade de demonstração de funcionalidades complexas. Eventuais melhorias no design podem ser implementadas sem comprometer a solidez da arquitetura.
+
+## Eventos em Tempo Real
+
+O MobX é utilizado para gerenciar eventos em tempo real, proporcionando uma experiência mais dinâmica e interativa para o usuário.
+
+Em resumo, o projeto foi desenvolvido com um foco em solidez e amplitude, incorporando as melhores práticas e tecnologias disponíveis para garantir um produto final de alta qualidade.

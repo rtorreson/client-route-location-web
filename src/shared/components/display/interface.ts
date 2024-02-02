@@ -79,3 +79,16 @@ export interface ContainerStyle {
   $maxHeight?: string;
   $overFlow?: string;
 }
+
+export interface Card {
+  $backgroundColor?: string;
+  $component?: JSX.Element;
+  $width?: string;
+  $height?: string;
+  $padding?: string;
+  $justifyItems?: string;
+  $gap?: string;
+  $borderRadious?: string;
+  $border?: string;
+  $position?: string;
+}

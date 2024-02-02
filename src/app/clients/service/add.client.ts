@@ -5,7 +5,7 @@ import { Contact } from '../types';
 export const addContact = async (query: Contact) => {
   const { data } = await HttpApiInternal.request<Contact>({
     method: 'POST',
-    url: '/client',
+    url: '/add',
     data: query,
   });
   return data;

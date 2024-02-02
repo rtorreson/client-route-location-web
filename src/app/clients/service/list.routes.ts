@@ -2,10 +2,10 @@ import { _api } from '@/environments/env';
 import { HttpApiInternal } from '@/infra/services';
 import { Contact } from '../types';
 
-export const listContact = async () => {
+export const listRoutes = async () => {
   const { data } = await HttpApiInternal.request({
     method: 'GET',
-    url: '/list',
+    url: '/calculate-route',
   });
-  return data.results as Contact;
+  return data.orderedCoordinates as Contact[];
 };

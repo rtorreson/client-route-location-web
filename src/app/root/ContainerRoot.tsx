@@ -1,6 +1,8 @@
-import { RouterProvider } from "react-router-dom";
-import { Router } from "@/shared";
+import { RouterProvider } from 'react-router-dom';
+import { ComposableLoader, Router } from '@/shared';
 
 export const ContainerRoot = () => {
-    return <RouterProvider router={Router} fallbackElement={<>Loading...</>} />;
+  return (
+    <RouterProvider router={Router} fallbackElement={<ComposableLoader />} />
+  );
 };

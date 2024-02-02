@@ -1,12 +1,12 @@
 import { observer } from 'mobx-react-lite';
 
 import { ContactProvider } from './context/client.provider';
-import { ClientView } from './view';
+import { ClientLayout } from './layout';
 
 const Client = () => {
     return (
         <ContactProvider>
-            <ClientView />
+            <ClientLayout />
         </ContactProvider>
     )
 }

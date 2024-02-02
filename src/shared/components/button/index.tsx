@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 import { defaultTheme } from '@/shared/styles/theme';
 import { ButtonStyle } from './interface';
@@ -18,4 +18,8 @@ export const Button = styled.button<ButtonStyle>`
   position: ${(props) => props.$position};
   right: ${(props) => props.$right};
   bottom: ${(props) => props.$bottom};
+  &:hover {
+    background-color: ${defaultTheme["green-300"]};
+    color: white
+  }
 `;
