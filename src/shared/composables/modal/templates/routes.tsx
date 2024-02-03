@@ -15,9 +15,14 @@ export const RouteModal = ({
         <div>
           <h2>Clientes Ordenados:</h2>
           <ul>
-            {contacts.map((contact) => (
+          {contacts.map((contact) => (
               <li key={contact.id}>
-                {`ID: ${contact.id}, Nome: ${contact.name}, Email: ${contact.email}, Coordenada X: ${contact.coordinates.x}, Coordenada Y: ${contact.coordinates.y}, distancia: ${contact.distance}`}
+                <strong>ID:</strong> {contact.id}, &nbsp;
+                <strong>Nome:</strong> {contact.name}, &nbsp;
+                <strong>Email:</strong> {contact.email}, &nbsp;
+                <strong>Coordenada X:</strong> {contact.coordinates.x}, &nbsp;
+                <strong>Coordenada Y:</strong> {contact.coordinates.y}, &nbsp;
+                <strong>Distância:</strong> {contact.distance}
               </li>
             ))}
           </ul>

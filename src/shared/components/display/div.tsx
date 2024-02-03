@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { ContainerStyle } from './interface';
 
 export const Div = styled.div<ContainerStyle>`
@@ -28,12 +28,6 @@ export const Div = styled.div<ContainerStyle>`
   flex: ${(props) => props.$flex};
   max-height: ${(props) => props.$maxHeight};
   overflow: ${(props) => props.$overFlow};  
-
-  ${(props) =>
-        props.$variant === 'search' &&
-        css<ContainerStyle>`
-      position: ${(props) => props.$position || 'relative'};
-    `}
 `;
 
 export const Container = styled.div<ContainerStyle>`
